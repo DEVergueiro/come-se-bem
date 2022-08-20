@@ -10,32 +10,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Pedido {
+model Order {
   id Int @id @default(autoincrement())
-  cliente String
-  valorTotal Int
-  finalizado Boolean @default(false)
+  client String
+  amount Int
+  delivered Boolean @default(false)
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @default(now()) @updatedAt()
-  produtos ListaProdutos[]
+  products ProductsList[]
 
-  @@map("pedido")
+  @@map("order")
 }
 
-model Produto {
+model Product {
   id Int @id @default(autoincrement())
-  nome String
-  valor Int
-  ordens ListaProdutos[]
+  name String
+  value Int
+  orders ProductsList[]
 
-  @@map("produto")
+  @@map("product")
 }
 
-model ListaProdutos {
+model ProductsList {
   id Int @id @default(autoincrement())
-  pedidoId Int
-  produtoId Int
-  pedido Pedido @relation(fields: [pedidoId], references: [id])
-  produto Produto @relation(fields: [produtoId], references: [id])
+  orderId Int
+  productId Int
+  order Order @relation(fields: [orderId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
 
 }
