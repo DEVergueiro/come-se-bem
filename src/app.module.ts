@@ -1,12 +1,14 @@
+import { OrderRepository } from './infrastructure/database/repositories/order.repository';
+import { OrderController } from './infrastructure/http/controllers/order.controller';
+import { DatabaseModule } from './infrastructure/database/database.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { OrderModule } from './pedido/order.module';
-import { ProductModule } from './product/product.module';
+
 
 @Module({
-  imports: [OrderModule, ProductModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [DatabaseModule],
+  controllers: [AppController, OrderController],
+  providers: [AppService, OrderRepository],
 })
 export class AppModule {}
