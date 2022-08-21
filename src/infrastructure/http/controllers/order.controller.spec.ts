@@ -1,6 +1,7 @@
+import { OrderRepository } from 'src/infrastructure/database/repositories/order.repository';
 import { Test, TestingModule } from '@nestjs/testing';
 import { OrderController } from './order.controller';
-import { OrderService } from '../../../pedido/order.service';
+
 
 describe('OrderController', () => {
   let controller: OrderController;
@@ -8,7 +9,7 @@ describe('OrderController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [OrderController],
-      providers: [OrderService],
+      providers: [OrderRepository],
     }).compile();
 
     controller = module.get<OrderController>(OrderController);
