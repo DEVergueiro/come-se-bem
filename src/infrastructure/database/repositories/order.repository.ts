@@ -1,3 +1,4 @@
+import { OrderDTO } from './../../../domain/dto/order.dto';
 import { Injectable } from '@nestjs/common';
 import { PrismaProvider } from 'src/infrastructure/database/providers/prisma.provider';
 
@@ -11,5 +12,13 @@ export class OrderRepository {
         id,
       },
     });
+  }
+
+  async create(data: OrderDTO) {
+    const order = await this.prisma.order.create({
+      data,
+    });
+
+    return order;
   }
 }
