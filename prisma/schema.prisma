@@ -11,14 +11,14 @@ datasource db {
 }
 
 model Order {
-  id String @id @default(uuid())
+  id String @id @default(uuid()) @db.VarChar(10)
   client String
   amount Int?
   amount_paid Int?
   change Int?
-  delivered Boolean @default(false)
+  delivered Boolean? @default(false)
   observation String?
-  payment Payment?
+  payment Payment? @default(cash)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now()) @updatedAt()
   products ProductsList[]
@@ -27,8 +27,9 @@ model Order {
 }
 
 model Product {
-  id String @id @default(uuid())
+  id String @id @default(uuid()) @db.VarChar(5)
   name String
+  image String
   value Int
   orders ProductsList[]
 
