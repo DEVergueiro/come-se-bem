@@ -4,7 +4,7 @@ export class OrderDTO {
   id?: any;
 
   @ApiProperty({
-    description: 'blabla',
+    description: 'blablabla',
     example: 'blabla',
   })
   client: string;
