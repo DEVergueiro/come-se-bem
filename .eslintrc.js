@@ -14,6 +14,7 @@ module.exports = {
       "project": "./tsconfig.json"
   },
   "rules": {
+    "no-useless-constructor":"off",
       "import/no-unresolved": 0,
       "prettier/prettier": [
           "error",
