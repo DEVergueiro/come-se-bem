@@ -6,7 +6,7 @@ import { PrintOrderUsecase } from '../../../usecases/print-order-usecase';
 
 @ApiTags('print-order')
 @Controller('print-order')
-export class OrderController {
+export class PrintOrderController {
   private readonly printOrderUsecase: PrintOrderUsecase;
 
   constructor(private readonly orderRepository: OrderRepository) {
