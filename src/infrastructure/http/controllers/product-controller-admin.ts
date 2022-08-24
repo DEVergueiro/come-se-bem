@@ -5,7 +5,7 @@ import { ProductDTO } from '../../../domain/dto/product-dto';
 import { CreateProductUsecase } from '../../../usecases/create-product-usecase';
 
 @Controller('admin/product')
-export class ProductController {
+export class AdminProductController {
   private readonly createProductUsecase: CreateProductUsecase;
 
   constructor(private readonly productRepository: ProductRepository) {

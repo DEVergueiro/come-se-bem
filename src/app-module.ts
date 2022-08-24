@@ -7,10 +7,16 @@ import { DatabaseModule } from './infrastructure/database/database-module';
 import { OrderRepository } from './infrastructure/database/repositories/order-repository';
 import { OrderController } from './infrastructure/http/controllers/order-controller';
 import { ProductController } from './infrastructure/http/controllers/product-controller';
+import { AdminProductController } from './infrastructure/http/controllers/product-controller-admin';
 
 @Module({
   imports: [DatabaseModule],
-  controllers: [AppController, OrderController, ProductController],
+  controllers: [
+    AppController,
+    OrderController,
+    ProductController,
+    AdminProductController,
+  ],
   providers: [AppService, OrderRepository, ProductRepository],
 })
 export class AppModule {}
