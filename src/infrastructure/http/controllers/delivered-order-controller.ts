@@ -6,7 +6,7 @@ import { DeliveredOrderUsecase } from '../../../usecases/delivered-order-usecase
 
 @ApiTags('delivered')
 @Controller('delivered')
-export class OrderController {
+export class DeliveredOrderController {
   private readonly deliveredOrderUsecase: DeliveredOrderUsecase;
 
   constructor(private readonly orderRepository: OrderRepository) {

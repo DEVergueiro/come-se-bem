@@ -4,6 +4,13 @@ import { PrismaProvider } from 'src/infrastructure/database/providers/prisma-pro
 
 import { OrderDTO } from '../../../domain/dto/order-dto';
 
+// Tive que alterar a lib do node-thermal-printer para fazer o import acima
+// const productData = [
+//   {
+//     productId: product.id,
+//   },
+// ];
+
 @Injectable()
 export class OrderRepository {
   constructor(private prisma: PrismaProvider) {}
@@ -20,7 +27,20 @@ export class OrderRepository {
     const order = await this.prisma.order.create({
       data,
     });
-
+    // const order = await this.prisma.order.create({
+    //   data: {
+    //     ...data,
+    //     products: {
+    //       createMany: {
+    //         data: [
+    //           {
+    //             data: productData,
+    //           },
+    //         ],
+    //       },
+    //     },
+    //   },
+    // });
     return order;
   }
 
@@ -49,7 +69,6 @@ export class OrderRepository {
         id,
       },
     });
-    return order;
 
     const printer = new ThermalPrinter({
       type: PrinterTypes.EPSON,
