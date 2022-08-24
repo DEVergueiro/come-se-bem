@@ -1,33 +1,49 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class OrderDTO {
-  id?: any;
+  id?: string;
 
   @ApiProperty({
-    description: 'blablabla',
-    example: 'blabla',
+    description: 'Nome do cliente',
+    example: 'Carlos Alberto',
   })
   client: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Valor total do pedido',
+    example: 130,
+  })
   amount: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Valor total pago em dinheiro pelo cliente',
+    example: 150,
+  })
   amount_paid: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Troco a ser dado ao cliente',
+    example: 20,
+  })
   change: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    description:
+      'Se o pedido já foi entregue ao cliente. "true" para sim e "false" para não',
+    example: true,
+  })
   delivered: boolean;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Observações inseridas no pedido pelo cliente',
+    example: 'Sem cebola',
+  })
   observation: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description:
+      'Selecionar forma de pagamento. Opções disponíveis: credit, debit, cash, pix.',
+    example: 'cash',
+  })
   payment: any;
-
-  createdAt: string;
-
-  updatedAt: string;
 }
