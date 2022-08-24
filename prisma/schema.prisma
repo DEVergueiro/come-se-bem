@@ -16,9 +16,9 @@ model Order {
   amount Int?
   amount_paid Int?
   change Int?
-  delivered Boolean @default(false)
+  delivered Boolean? @default(false)
   observation String?
-  payment Payment?
+  payment Payment? @default(cash)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @default(now()) @updatedAt()
   products ProductsList[]
@@ -29,6 +29,7 @@ model Order {
 model Product {
   id String @id @default(uuid())
   name String
+  image String
   value Int
   orders ProductsList[]
 

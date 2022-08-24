@@ -1,7 +1,7 @@
-import { OrderRepository } from 'src/infrastructure/database/repositories/order.repository';
 import { Test, TestingModule } from '@nestjs/testing';
-import { OrderController } from './order.controller';
+import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
+import { OrderController } from './order-controller';
 
 describe('OrderController', () => {
   let controller: OrderController;

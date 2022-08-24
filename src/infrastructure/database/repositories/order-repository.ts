@@ -1,6 +1,7 @@
-import { OrderDTO } from './../../../domain/dto/order.dto';
 import { Injectable } from '@nestjs/common';
-import { PrismaProvider } from 'src/infrastructure/database/providers/prisma.provider';
+import { PrismaProvider } from 'src/infrastructure/database/providers/prisma-provider';
+
+import { OrderDTO } from '../../../domain/dto/order-dto';
 
 @Injectable()
 export class OrderRepository {

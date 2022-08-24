@@ -1,10 +1,10 @@
 import {
   Injectable,
-  Logger,
   OnModuleDestroy,
   OnModuleInit,
   INestApplication,
 } from '@nestjs/common';
+import { Logger } from '@nestjs/common/services/logger.service';
 import { PrismaClient } from '@prisma/client';
 
 @Injectable()

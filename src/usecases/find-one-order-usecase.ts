@@ -1,4 +1,4 @@
-import { OrderRepository } from 'src/infrastructure/database/repositories/order.repository';
+import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 export class FindOneOrderUsecase {
   constructor(private readonly orderRepository: OrderRepository) {}
