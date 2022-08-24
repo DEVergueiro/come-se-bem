@@ -12,10 +12,4 @@ export class ProductDTO {
 
   @ApiProperty()
   value: number;
-
-  @ApiProperty()
-  createdAt: string;
-
-  @ApiProperty()
-  updatedAt: string;
 }

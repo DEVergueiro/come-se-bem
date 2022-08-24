@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Order {
-  id String @id @default(uuid()) @db.VarChar(10)
+  id String @id @default(uuid())
   client String
   amount Int?
   amount_paid Int?
@@ -27,7 +27,7 @@ model Order {
 }
 
 model Product {
-  id String @id @default(uuid()) @db.VarChar(5)
+  id String @id @default(uuid())
   name String
   image String
   value Int
