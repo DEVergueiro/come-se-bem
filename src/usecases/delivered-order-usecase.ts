@@ -4,6 +4,6 @@ export class DeliveredOrderUsecase {
   constructor(private readonly orderRepository: OrderRepository) {}
 
   async execute() {
-    return this.orderRepository.findDelivered();
+    return this.orderRepository.delivered();
   }
 }
