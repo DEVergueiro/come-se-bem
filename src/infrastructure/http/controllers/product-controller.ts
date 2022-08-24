@@ -26,8 +26,8 @@ export class ProductController {
     return this.findIdProductUsecase.execute(id);
   }
 
-  @Get('/:name')
-  async findFirst(@Param('name') name: string) {
-    return this.findNameProductUsecase.execute(name);
+  @Get('/name/:nameProduct')
+  async findName(@Param('nameProduct') nameProduct: string) {
+    return this.findNameProductUsecase.execute(nameProduct);
   }
 }
