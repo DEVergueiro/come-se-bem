@@ -4,6 +4,12 @@ export class OrderDTO {
   id?: string;
 
   @ApiProperty({
+    description: 'Número do pedido: será gerado um número do pedido no front',
+    example: 125,
+  })
+  order_number: number;
+
+  @ApiProperty({
     description: 'Nome do cliente',
     example: 'Carlos Alberto',
   })
@@ -30,7 +36,7 @@ export class OrderDTO {
   @ApiProperty({
     description:
       'Se o pedido já foi entregue ao cliente. "true" para sim e "false" para não',
-    example: true,
+    example: false,
   })
   delivered?: boolean;
 
@@ -47,5 +53,8 @@ export class OrderDTO {
   })
   payment?: any;
 
-  // orders: array<string>
+  @ApiProperty({
+    description: 'O front irá passar um objeto com os produtos selecionados',
+  })
+  products: any;
 }
