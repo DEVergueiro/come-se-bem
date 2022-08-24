@@ -1,6 +1,7 @@
 -- CreateTable
 CREATE TABLE `order` (
     `id` VARCHAR(191) NOT NULL,
+    `order_number` INTEGER NOT NULL,
     `client` VARCHAR(191) NOT NULL,
     `amount` INTEGER NULL,
     `amount_paid` INTEGER NULL,

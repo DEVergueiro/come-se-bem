@@ -12,6 +12,7 @@ datasource db {
 
 model Order {
   id String @id @default(uuid())
+  order_number Int
   client String
   amount Int?
   amount_paid Int?

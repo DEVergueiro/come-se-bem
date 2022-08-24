@@ -15,10 +15,10 @@ export class ProductRepository {
     });
   }
 
-  async findFirst(name: string) {
-    return this.prisma.product.findFirst({
+  async findName(nameProduct: string) {
+    return this.prisma.product.findMany({
       where: {
-        name,
+        name: nameProduct,
       },
     });
   }

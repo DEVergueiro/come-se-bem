@@ -1,9 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ProductRepository } from 'src/infrastructure/database/repositories/product-repository';
 
 import { FindIdProductUsecase } from '../../../usecases/find-id-product-usecase';
 import { FindNameProductUsecase } from '../../../usecases/find-name-product-usecase';
 
+@ApiTags('product')
 @Controller('product')
 export class ProductController {
   private readonly findIdProductUsecase: FindIdProductUsecase;
@@ -24,8 +26,8 @@ export class ProductController {
     return this.findIdProductUsecase.execute(id);
   }
 
-  @Get('/:name')
-  async findFirst(@Param('name') name: string) {
-    return this.findNameProductUsecase.execute(name);
+  @Get('/name/:nameProduct')
+  async findName(@Param('nameProduct') nameProduct: string) {
+    return this.findNameProductUsecase.execute(nameProduct);
   }
 }
