@@ -5,8 +5,8 @@ import { OrderRepository } from 'src/infrastructure/database/repositories/order-
 import { DeliveredOrderUsecase } from '../../../usecases/delivered-order-usecase';
 import { NotDeliveredOrderUsecase } from '../../../usecases/not-delivered-order-usecase';
 
-@ApiTags('delivered')
-@Controller('delivered')
+@ApiTags('delivereds')
+@Controller('delivereds')
 export class DeliveredOrderController {
   private readonly deliveredOrderUsecase: DeliveredOrderUsecase;
 

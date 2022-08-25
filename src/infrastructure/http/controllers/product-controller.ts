@@ -6,8 +6,8 @@ import { FindIdProductUsecase } from '../../../usecases/find-id-product-usecase'
 import { FindNameProductUsecase } from '../../../usecases/find-name-product-usecase';
 import { FindSixProductsUsecase } from '../../../usecases/find-six-products-usecase';
 
-@ApiTags('product')
-@Controller('product')
+@ApiTags('products')
+@Controller('products')
 export class ProductController {
   private readonly findIdProductUsecase: FindIdProductUsecase;
 

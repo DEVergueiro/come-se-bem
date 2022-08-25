@@ -5,8 +5,8 @@ import { ProductRepository } from 'src/infrastructure/database/repositories/prod
 import { ProductDTO } from '../../../domain/dto/product-dto';
 import { CreateProductUsecase } from '../../../usecases/create-product-usecase';
 
-@ApiTags('admin product')
-@Controller('admin/product')
+@ApiTags('admin products')
+@Controller('admin/products')
 export class AdminProductController {
   private readonly createProductUsecase: CreateProductUsecase;
 

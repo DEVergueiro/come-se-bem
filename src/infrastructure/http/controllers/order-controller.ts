@@ -8,8 +8,8 @@ import { FindAllOrderUsecase } from '../../../usecases/find-all-order-usecase';
 import { FindOneOrderUsecase } from '../../../usecases/find-one-order-usecase';
 import { UpdateOrderUsecase } from '../../../usecases/update-order-usecase';
 
-@ApiTags('order')
-@Controller('order')
+@ApiTags('orders')
+@Controller('orders')
 export class OrderController {
   private readonly createOrderUsecase: CreateOrderUsecase;
 
