@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ProductRepository } from 'src/infrastructure/database/repositories/product-repository';
 
 import { FindIdProductUsecase } from '../../../usecases/find-id-product-usecase';
@@ -27,16 +27,25 @@ export class ProductController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Route to search for product by id.',
+  })
   @Get('/:id')
   async findOne(@Param('id') id: string) {
     return this.findIdProductUsecase.execute(id);
   }
 
+  @ApiOperation({
+    summary: 'Route to search for product by name.',
+  })
   @Get('/name/:nameProduct')
   async findName(@Param('nameProduct') nameProduct: string) {
     return this.findNameProductUsecase.execute(nameProduct);
   }
 
+  @ApiOperation({
+    summary: 'Route to fetch the six most requested products.',
+  })
   @Get('/most-popular/six')
   async findSix() {
     return this.findSixProductsUsecase.execute();

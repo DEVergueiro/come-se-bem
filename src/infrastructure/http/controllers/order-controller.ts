@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 import { OrderDTO } from '../../../domain/dto/order-dto';
@@ -26,21 +26,33 @@ export class OrderController {
     this.findAllOrderUsecase = new FindAllOrderUsecase(this.orderRepository);
   }
 
+  @ApiOperation({
+    summary: 'Route for order creation.',
+  })
   @Post()
   async create(@Body() data: OrderDTO) {
     return this.createOrderUsecase.execute(data);
   }
 
+  @ApiOperation({
+    summary: 'Route to fetch order by id.',
+  })
   @Get('/:id')
   async findOne(@Param('id') id: string) {
     return this.findOneOrderUsecase.execute(id);
   }
 
+  @ApiOperation({
+    summary: 'Route to fetch all orders.',
+  })
   @Get()
   async findAll() {
     return this.findAllOrderUsecase.execute();
   }
 
+  @ApiOperation({
+    summary: 'Route to update the order.',
+  })
   @Put('/:id')
   async update(@Param('id') id: string, @Body() data: OrderDTO) {
     return this.updateOrderUsecase.execute(id, data);
