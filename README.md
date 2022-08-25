@@ -1,58 +1,57 @@
 
-<p align="center"><a href="https://devio.com.br/" target="blank"><img src="https://devio.com.br/_next/image?url=%2Fimages%2Fabout%2Fdevio.webp&w=640&q=75" width="200" alt="Devio Logo" /></a></p>
+<p align="center"><a href="https://devio.com.br/" target="blank"><img src="https://user-images.githubusercontent.com/100455051/186751252-f52275c7-3d14-4dd7-8eab-273e25b91859.png" width="200" alt="Devio Logo" /></a></p>
 
-<p align="center">Challenge de Back-end proposto pela <a href="https://devio.com.br/" target="_blank">Devio</a> . </p>
-<p align="center">Consiste na criação de uma API a ser consumida pelo front-end para um restaurante fast-food com as seguintes características e requisitos.</p>
+<p align="center">Backend Challenge proposed by <a href="https://devio.com.br/" target="_blank">Devio</a> . </p>
+<p align="center">It consists of creating an API to be consumed by the front-end for a fast-food restaurant with the following characteristics and requirements.</p>
 
 <p align="center">
 
 
-##  Descrição 👾
+##  Description 👾
 
-Um restaurante precisa poder registrar suas vendas de forma fácil e rápida, este trabalha com preparo de comidas rápidas e o método atual por comanda deixa o processo como um todo mais lento. O restaurante gostaria de ter um ambiente intuitivo listando os produtos mais vendidos e possibilitando a fácil inserção desses no checkout, ele também gostaria de um visual simples, porém moderno.
+A restaurant needs to be able to register its sales easily and quickly, it works with fast food preparation and the current method by command slows down the process as a whole. The restaurant would like to have an intuitive environment listing the best selling products and allowing them to be easily inserted into the checkout, it would also like a simple yet modern look.
 
-###  Requisitos ✅
+###  Requirements ✅
 
-- A linguagem utilizada deve ser PHP ou JS.
+- The language used must be PHP or JS.
 
-- Deverá ser desenvolvido utilizando as versões mais recentes.
+- Must be developed using the latest versions.
 
-- Utilizar dos [Padrões Devio](https://github.com/deviobr/code-patterns).
+- Using Devio Standards.
 
-###  Histórias de Usuário 🧑‍🍳
+###  User Stories 🧑‍🍳
 
-- O usuário poderá ver uma pequena quantidade de produtos na tela para seleção rápida.
+- User will be able to see a small amount of products on the screen for quick selection.
 
-- O usuário terá a opção de digitar o nome ou código para encontrar o produto.
+- The user will have the option to enter the name or code to find the product.
 
-- O usuário irá poder adicionar/remover itens e acompanhar o resumo do pedido.
+- The user will be able to add/remove items and track the order summary.
 
-- O usuário poderá ver o total e o troco.
+- User will be able to see the total and change.
 
-- Deverá poder incluir o nome do cliente para ser entregue o pedido.
+- You must be able to include the customer's name to deliver the order.
 
-- Ao finalizar o pedido este deverá ser impresso em uma via para o cliente (impressora térmica), liberando a tela para o próximo pedido.
+- At the end of the order, it must be printed on a copy for the customer (thermal printer), releasing the screen for the next order.
 
-- Obs: A solução é muito mais simples do que se parece.
+- Note: The solution is much simpler than it looks.
 
-- O pedido deverá aparecer para a cozinha junto ao nome do cliente.
+- The order must appear to the kitchen next to the customer's name.
 
-- A cozinha poderá dar baixa nos pedidos concluídos.
+- The kitchen may cancel completed orders.
 
-###  Histórias Bônus (opcionais) 💘
+###  Bonus Stories (optional) 💘
 
-- Os pedidos devem aparecer para a cozinha em tempo real.
+- Orders must appear to the kitchen in real time.
 
-- Obs: Utilização de Long Pooling ou WebSockets facilitam a solução.
+- Note: Use of Long Pooling or WebSockets facilitates the solution.
 
-- O usuário poderá incluir uma observação a cozinha.
+- The user can add a note to the kitchen.
 
-- O usuário poderá atribuir múltiplas formas de pagamento na finalização do pedido.
+- The user can assign multiple payment methods at the end of the order.
 
-- Os pedidos baixados devem aparecer em uma tela com o nome do cliente.
+- Downloaded orders must appear on a screen with the customer's name.
 
-
-##  Instalação :wrench:
+##  Installation :wrench:
 
 ```bash
 
@@ -60,7 +59,7 @@ $ npm install
 
 ```
 
-##  Iniciando a aplicação :arrow_forward:
+##  Starting app :arrow_forward:
 
 ```bash
 
@@ -78,7 +77,7 @@ $ npm run start:prod
 
 ```
 
-##  Teste :white_check_mark:
+##  Test :white_check_mark:
 
 ```bash
 
@@ -95,13 +94,13 @@ $ npm run test:e2e
 $ npm run test:cov
 
 ```
-##  Documentação :page_with_curl:
-Documentação criada utilizando o Swagger [https://come-se-bem.herokuapp.com/docs](https://come-se-bem.herokuapp.com/docs)
+##  Documentation :page_with_curl:
+Documentation created using Swagger [https://come-se-bem.herokuapp.com/docs](https://come-se-bem.herokuapp.com/docs)
 ##  Deploy :computer::earth_americas:
-Deploy da aplicação e Banco de Dados feito no Heroku: [https://come-se-bem.herokuapp.com](https://come-se-bem.herokuapp.com)
-##  Desenvolvedor :man:
+Application and Database Deployment on Heroku: [https://come-se-bem.herokuapp.com](https://come-se-bem.herokuapp.com)
+##  Developer :man:
 <p align="center"><a href="https://devio.com.br/" target="blank"><img src="https://avatars.githubusercontent.com/u/100455051?s=400&u=9da3d222ee79a6e79e34eed4c1cfca9e54733b85&v=4" width="150" alt="Devio Logo" /></a></p>
 
-- **Autor** - Natã Vergueiro
+- **Author** - Natã Vergueiro
 
 - **LinkedIn** - [https://www.linkedin.com/in/devergueiro/](https://www.linkedin.com/in/devergueiro/)
