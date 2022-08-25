@@ -37,7 +37,7 @@ export class ProductController {
     return this.findNameProductUsecase.execute(nameProduct);
   }
 
-  @Get('/six')
+  @Get('/most-popular/six')
   async findSix() {
     return this.findSixProductsUsecase.execute();
   }
