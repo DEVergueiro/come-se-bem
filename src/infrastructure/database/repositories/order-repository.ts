@@ -1,10 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { printer, types } from 'node-thermal-printer/node-thermal-printer';
 import { PrismaProvider } from 'src/infrastructure/database/providers/prisma-provider';
 
 import { OrderDTO } from '../../../domain/dto/order-dto';
-
-const ThermalPrinter = require("node-thermal-printer").printer;
-const PrinterTypes = require("node-thermal-printer").types;
 
 @Injectable()
 export class OrderRepository {
@@ -55,13 +53,13 @@ export class OrderRepository {
       },
     });
 
-    let printer = new ThermalPrinter({
-      type: PrinterTypes.EPSON,
+    const print = new printer({
+      type: types.EPSON,
       interface: 'tcp://xxx.xxx.xxx.xxx',
     });
-    printer.alignLeft();
-    printer.setPrinterDriver(order);
-    printer.cut();
+    print.alignLeft();
+    print.setPrinterDriver(order);
+    print.cut();
   }
 
   async delivered() {
