@@ -52,7 +52,8 @@ export class OrderRepository {
         id,
       },
     });
-
+    // I disabled eslint on that line because the constructor comes from the lowercase lib
+    // eslint-disable-next-line new-cap
     const print = new printer({
       type: types.EPSON,
       interface: 'tcp://xxx.xxx.xxx.xxx',
@@ -67,6 +68,10 @@ export class OrderRepository {
       where: {
         delivered: true,
       },
+      select: {
+        id: true,
+        client: true,
+      },
     });
   }
 
@@ -74,6 +79,10 @@ export class OrderRepository {
     return this.prisma.order.findMany({
       where: {
         delivered: false,
+      },
+      select: {
+        id: true,
+        client: true,
       },
     });
   }
