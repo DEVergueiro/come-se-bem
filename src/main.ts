@@ -7,6 +7,9 @@ import { swaggerConfig } from './infrastructure/configs/swagger-config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: 'https://come-se-bem.herokuapp.com',
+  });
 
   // API Documentation
   const document = SwaggerModule.createDocument(app, swaggerConfig);
