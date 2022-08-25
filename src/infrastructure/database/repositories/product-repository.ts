@@ -23,6 +23,17 @@ export class ProductRepository {
     });
   }
 
+  async findSix() {
+    return this.prisma.product.findMany({
+      include: {
+        _count: {
+          select: { orders: true },
+        },
+      },
+      take: 6,
+    });
+  }
+
   async create(data: ProductDTO) {
     const product = await this.prisma.product.create({
       data,
