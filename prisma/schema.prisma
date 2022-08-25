@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env("DATABASE_URL")
+  url = "mysql://b79b36bc9164d9:92cb131c@us-cdbr-east-06.cleardb.net/heroku_bea600f35dffdcf?reconnect=true"
   referentialIntegrity = "prisma"
 }
 
