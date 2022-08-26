@@ -21,14 +21,4 @@ export class ProductDTO {
     example: 10,
   })
   value: number;
-
-  @ApiProperty({
-    description: 'Time it was created.',
-  })
-  createdAt: Date;
-
-  @ApiProperty({
-    description: 'Time it was updated.',
-  })
-  updatedAt: Date;
 }
