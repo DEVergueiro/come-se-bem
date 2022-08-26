@@ -1,12 +1,12 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ProductRepository } from 'src/infrastructure/database/repositories/product-repository';
 
 import { ProductDTO } from '../../../domain/dto/product-dto';
 import { CreateProductUsecase } from '../../../usecases/create-product-usecase';
 
-@ApiTags('admin product')
-@Controller('admin/product')
+@ApiTags('admin products')
+@Controller('admin/products')
 export class AdminProductController {
   private readonly createProductUsecase: CreateProductUsecase;
 
@@ -16,6 +16,9 @@ export class AdminProductController {
     );
   }
 
+  @ApiOperation({
+    summary: 'Route to create product.',
+  })
   @Post()
   async create(@Body() data: ProductDTO) {
     return this.createProductUsecase.execute(data);

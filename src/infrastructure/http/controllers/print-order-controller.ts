@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 import { PrintOrderUsecase } from '../../../usecases/print-order-usecase';
@@ -13,6 +13,10 @@ export class PrintOrderController {
     this.printOrderUsecase = new PrintOrderUsecase(this.orderRepository);
   }
 
+  @ApiOperation({
+    summary:
+      'This route fetches the order by id and prints it on a thermal printer.',
+  })
   @Get('/:id')
   async findOne(@Param('id') id: string) {
     return this.printOrderUsecase.execute(id);

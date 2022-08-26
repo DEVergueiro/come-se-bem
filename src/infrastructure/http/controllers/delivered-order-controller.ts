@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 import { DeliveredOrderUsecase } from '../../../usecases/delivered-order-usecase';
@@ -21,11 +21,17 @@ export class DeliveredOrderController {
     );
   }
 
+  @ApiOperation({
+    summary: 'This route returns the orders delivered.',
+  })
   @Get('/true')
   async delivered() {
     return this.deliveredOrderUsecase.execute();
   }
 
+  @ApiOperation({
+    summary: 'This route returns the orders undelivered.',
+  })
   @Get('/false')
   async notDelivered() {
     return this.notDeliveredOrderUsecase.execute();

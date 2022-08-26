@@ -1,23 +1,34 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class ProductDTO {
+  @ApiProperty()
   id?: string;
 
   @ApiProperty({
-    description: 'Nome do produto',
+    description: 'Name Product',
     example: 'Hotdog',
   })
   name: string;
 
   @ApiProperty({
-    description: 'Endereço da foto do produto',
+    description: 'Product photo address.',
     example: 'http://www.come-se-bem.com/image/hotdog.jpg',
   })
   image: string;
 
   @ApiProperty({
-    description: 'Valor do produto',
+    description: 'Product value.',
     example: 10,
   })
   value: number;
+
+  @ApiProperty({
+    description: 'Time it was created.',
+  })
+  createdAt: Date;
+
+  @ApiProperty({
+    description: 'Time it was updated.',
+  })
+  updatedAt: Date;
 }
