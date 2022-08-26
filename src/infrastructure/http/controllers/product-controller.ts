@@ -2,6 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ProductRepository } from 'src/infrastructure/database/repositories/product-repository';
 
+import { FindAllProductUsecase } from '../../../usecases/find-all-product-usecase';
 import { FindIdProductUsecase } from '../../../usecases/find-id-product-usecase';
 import { FindNameProductUsecase } from '../../../usecases/find-name-product-usecase';
 import { FindSixProductsUsecase } from '../../../usecases/find-six-products-usecase';
@@ -15,6 +16,8 @@ export class ProductController {
 
   private readonly findSixProductsUsecase: FindSixProductsUsecase;
 
+  private readonly findAllProductUsecase: FindAllProductUsecase;
+
   constructor(private readonly productRepository: ProductRepository) {
     this.findIdProductUsecase = new FindIdProductUsecase(
       this.productRepository,
@@ -25,6 +28,17 @@ export class ProductController {
     this.findSixProductsUsecase = new FindSixProductsUsecase(
       this.productRepository,
     );
+    this.findAllProductUsecase = new FindAllProductUsecase(
+      this.productRepository,
+    );
+  }
+
+  @ApiOperation({
+    summary: 'Route to fetch all products.',
+  })
+  @Get()
+  async findAll() {
+    return this.findAllProductUsecase.execute();
   }
 
   @ApiOperation({
