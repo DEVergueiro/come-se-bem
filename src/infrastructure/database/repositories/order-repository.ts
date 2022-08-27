@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { printer, types } from 'node-thermal-printer/node-thermal-printer';
-import { PrismaProvider } from 'src/infrastructure/database/providers/prisma-provider';
 
 import { OrderDTO } from '../../../domain/dto/order-dto';
+import { PrismaProvider } from '../providers/prisma-provider';
 
 @Injectable()
 export class OrderRepository {

@@ -1,9 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ProductRepository } from 'src/infrastructure/database/repositories/product-repository';
 
 import { ProductDTO } from '../../../domain/dto/product-dto';
 import { CreateProductUsecase } from '../../../usecases/create-product-usecase';
+import { ProductRepository } from '../../database/repositories/product-repository';
 
 @ApiTags('admin products')
 @Controller('admin/products')

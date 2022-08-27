@@ -1,8 +1,8 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 import { PrintOrderUsecase } from '../../../usecases/print-order-usecase';
+import { OrderRepository } from '../../database/repositories/order-repository';
 
 @ApiTags('print-order')
 @Controller('print-order')

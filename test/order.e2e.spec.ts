@@ -4,7 +4,7 @@ import * as request from 'supertest';
 
 import { AppModule } from '../src/app-module';
 
-describe('AppController (e2e)', () => {
+describe('OrderController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -16,10 +16,10 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/orders (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/orders')
       .expect(200)
-      .expect('Hello World!');
+      .expect(Object);
   });
 });
