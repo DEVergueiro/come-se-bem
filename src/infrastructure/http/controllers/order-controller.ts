@@ -1,12 +1,12 @@
 import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 import { OrderDTO } from '../../../domain/dto/order-dto';
 import { CreateOrderUsecase } from '../../../usecases/create-order-usecase';
 import { FindAllOrderUsecase } from '../../../usecases/find-all-order-usecase';
 import { FindOneOrderUsecase } from '../../../usecases/find-one-order-usecase';
 import { UpdateOrderUsecase } from '../../../usecases/update-order-usecase';
+import { OrderRepository } from '../../database/repositories/order-repository';
 
 @ApiTags('orders')
 @Controller('orders')

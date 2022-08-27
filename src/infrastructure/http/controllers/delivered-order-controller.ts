@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { OrderRepository } from 'src/infrastructure/database/repositories/order-repository';
 
 import { DeliveredOrderUsecase } from '../../../usecases/delivered-order-usecase';
 import { NotDeliveredOrderUsecase } from '../../../usecases/not-delivered-order-usecase';
+import { OrderRepository } from '../../database/repositories/order-repository';
 
 @ApiTags('delivered')
 @Controller('delivered')

@@ -1,11 +1,11 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ProductRepository } from 'src/infrastructure/database/repositories/product-repository';
 
 import { FindAllProductUsecase } from '../../../usecases/find-all-product-usecase';
 import { FindIdProductUsecase } from '../../../usecases/find-id-product-usecase';
 import { FindNameProductUsecase } from '../../../usecases/find-name-product-usecase';
 import { FindSixProductsUsecase } from '../../../usecases/find-six-products-usecase';
+import { ProductRepository } from '../../database/repositories/product-repository';
 
 @ApiTags('products')
 @Controller('products')
