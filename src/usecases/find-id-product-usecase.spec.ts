@@ -18,17 +18,13 @@ describe('FindIdProductUsecase', () => {
     expect(findIdProductUsecase).toBeDefined();
   });
 
-  it('should be able to find one playlist', async () => {
-    // Montar  a classe que tu testando
+  it('should be able to find one product', async () => {
     const findIdProductUsecase = new FindIdProductUsecase(
-      // tu tem que passar o que ela pede no constructor so que mockado => fake
       fakeProductRepository,
     );
 
-    // executar o test
     const result = await findIdProductUsecase.execute('title-fake');
 
-    // fazer com que ele quqbre caso n satisfaça alguma expectativa
     expect(fakeProductRepository.findOne).toHaveBeenCalled();
     expect(findIdProductUsecase).toBeDefined();
     expect(result).toBeDefined();
