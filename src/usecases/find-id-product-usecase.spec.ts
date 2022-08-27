@@ -23,7 +23,7 @@ describe('FindIdProductUsecase', () => {
       fakeProductRepository,
     );
 
-    const result = await findIdProductUsecase.execute('title-fake');
+    const result = await findIdProductUsecase.execute(product.id);
 
     expect(fakeProductRepository.findOne).toHaveBeenCalled();
     expect(findIdProductUsecase).toBeDefined();

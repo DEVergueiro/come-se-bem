@@ -19,7 +19,7 @@ describe('FindOneOrderUsecase', () => {
   it('should be able to find one order', async () => {
     const findOneOrderUsecase = new FindOneOrderUsecase(fakeOrderRepository);
 
-    const result = await findOneOrderUsecase.execute('fake');
+    const result = await findOneOrderUsecase.execute(order.id);
 
     expect(fakeOrderRepository.findOne).toHaveBeenCalled();
     expect(findOneOrderUsecase).toBeDefined();
